@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16.2
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=Admin123!
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=hangman

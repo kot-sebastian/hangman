@@ -1,0 +1,25 @@
+logging:
+  level:
+    com.hangman: TRACE
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/main.xml
+    drop-first: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: Admin123!
+    url: jdbc:postgresql://localhost:5432/hangman
+
+server:
+  servlet:
+    context-path: /api
+
+hangman:
+  rest:
+    client:
+      random-world:
+        ryanrk:
+          url: https://random-word.ryanrk.com

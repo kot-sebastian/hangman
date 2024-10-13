@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="sebkot">
+        <createTable tableName="game">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="game_status" type="varchar"/>
+            <column name="word" type="varchar"/>
+            <column name="used_letters" type="varchar"/>
+            <column name="bad_counter" type="int"/>
+            <column name="expected_move_user_id" type="varchar"/>
+            <column name="user_ids" type="varchar"/>
+            <column name="ready_user_ids" type="varchar"/>
+            <column name="lost_user_id" type="varchar"/>
+            <column name="winner_user_id" type="varchar"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="sebkot">
+        <createSequence
+                         dataType="bigint"
+                         incrementBy="1"
+                         sequenceName="game_seq"/>
+    </changeSet>
+
+</databaseChangeLog>
